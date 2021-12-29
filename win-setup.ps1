@@ -12,7 +12,6 @@
 #
 # Learn more: http://boxstarter.org/Learn/WebLauncher
 #
-# bits and pieces from 
 
 # Temporary
 Disable-UAC
