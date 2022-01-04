@@ -24,8 +24,8 @@ Disable-BingSearch
 Disable-GameBarTips
 
 #Set-WindowsExplorerOptions -EnableShowHiddenFilesOrFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions
-Set-TaskbarOptions -Size Small -Dock Bottom -Combine Full -Lock
-Set-TaskbarOptions -Size Small -Dock Bottom -Combine Full -AlwaysShowIconsOn
+Set-BoxStarterTaskbarOptions -Size Small -Dock Bottom -Combine Full -Lock
+Set-BoxStarterTaskbarOptions -Size Small -Dock Bottom -Combine Full -AlwaysShowIconsOn
 
 # Dark Theme for Windows (commenting out by default because this one's probbly a minority want)
 # Note: the title bar text and such is still black with low contrast, and needs additional tweaks (it'll probably be better in a future build)
