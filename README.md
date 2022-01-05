@@ -13,3 +13,4 @@ build scripts for windows 10/11 setup
 #### iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
 
 #### choco install -y boxstarter
+#### open boxstartershell either from powershell/Windows Terminal or  Windows button + S for search and type "boxstartershell"
