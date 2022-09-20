@@ -49,6 +49,11 @@ choco install dropbox
 choco install microsoft-windows-terminal --pre
 choco install spotify
 choco install keepassxc
+choco install signal
+choco install github-desktop
+choco install 7zip
+choco install wireshark
+
 
 
 # Game launchers
