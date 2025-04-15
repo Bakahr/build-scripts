@@ -67,21 +67,21 @@ New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Force
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search" -Name "AllowCortana" -Value 0 -Type DWord
 
 # Set this to $true if you want Game Bar enabled, $false to disable
-$EnableXboxGameBar = $false
+# $EnableXboxGameBar = $false
 
-if ($EnableXboxGameBar) {
-    Write-Host "Enabling Xbox Game Bar..." -ForegroundColor Cyan
-    reg add HKCU\Software\Microsoft\GameBar /v AllowAutoGameMode /t REG_DWORD /d 1 /f
-    reg add HKCU\Software\Microsoft\GameBar /v AutoGameModeEnabled /t REG_DWORD /d 1 /f
-    reg add HKCU\Software\Microsoft\GameBar /v ShowStartupPanel /t REG_DWORD /d 1 /f
-    reg add HKCU\Software\Microsoft\Windows\GameDVR /v AppCaptureEnabled /t REG_DWORD /d 1 /f
-} else {
-    Write-Host "Disabling Xbox Game Bar..." -ForegroundColor Yellow
-    reg add HKCU\Software\Microsoft\GameBar /v AllowAutoGameMode /t REG_DWORD /d 0 /f
-    reg add HKCU\Software\Microsoft\GameBar /v AutoGameModeEnabled /t REG_DWORD /d 0 /f
-    reg add HKCU\Software\Microsoft\GameBar /v ShowStartupPanel /t REG_DWORD /d 0 /f
-    reg add HKCU\Software\Microsoft\Windows\GameDVR /v AppCaptureEnabled /t REG_DWORD /d 0 /f
-}
+# if ($EnableXboxGameBar) {
+#    Write-Host "Enabling Xbox Game Bar..." -ForegroundColor Cyan
+#   reg add HKCU\Software\Microsoft\GameBar /v AllowAutoGameMode /t REG_DWORD /d 1 /f
+#    reg add HKCU\Software\Microsoft\GameBar /v AutoGameModeEnabled /t REG_DWORD /d 1 /f
+#    reg add HKCU\Software\Microsoft\GameBar /v ShowStartupPanel /t REG_DWORD /d 1 /f
+#    reg add HKCU\Software\Microsoft\Windows\GameDVR /v AppCaptureEnabled /t REG_DWORD /d 1 /f
+# } else {
+#    Write-Host "Disabling Xbox Game Bar..." -ForegroundColor Yellow
+#    reg add HKCU\Software\Microsoft\GameBar /v AllowAutoGameMode /t REG_DWORD /d 0 /f
+#    reg add HKCU\Software\Microsoft\GameBar /v AutoGameModeEnabled /t REG_DWORD /d 0 /f
+#    reg add HKCU\Software\Microsoft\GameBar /v ShowStartupPanel /t REG_DWORD /d 0 /f
+#    reg add HKCU\Software\Microsoft\Windows\GameDVR /v AppCaptureEnabled /t REG_DWORD /d 0 /f
+# }
 
 # This removes Game Bar completely
 # Get-AppxPackage *XboxGamingOverlay* | Remove-AppxPackage
