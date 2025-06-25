@@ -1,26 +1,55 @@
-# windows-scripts
+# 🚀 Modern Windows 11 Setup Script
 
+This is my personal Windows 11 setup script, built with ❤️, ☕ and Chocolatey.  
+It configures my dev environment, installs essential tools, applies system tweaks, and removes Microsoft bloat — all in one go.
 
- build scripts for windows 10/11 setup
+> Because "manual install" is a curse word in my house.
 
- bits and pieces from the following
-  - jessfraz https://gist.github.com/jessfraz/7c319b046daa101a4aaef937a20ff41f
-  - NickCraver https://gist.github.com/NickCraver/7ebf9efbfd0c3eab72e9
-  - Microsoft https://github.com/Microsoft/windows-dev-box-setup-scripts
+---
 
-### Description: Boxstarter script
+## 🛠 What It Installs
 
-### Install Chocolatey & Boxstarter:
-. { iwr -useb http://boxstarter.org/bootstrapper.ps1 } | iex; get-boxstarter -Force
-or if you have chocolately installed: 
+### Dev Tools
+- Git (with Unix tools on path)
+- PoshGit
+- Sysinternals
 
-choco install -y boxstarter
-You might need to set: Set-ExecutionPolicy RemoteSigned
+### Applications
+- Google Chrome
+- 7zip
+- VSCode
+- Spotify
+- Discord
+- Dropbox
+- GitHub Desktop
+- Steam
+- Obsidian
 
-### Run this boxstarter by calling the following from an **elevated** command-prompt:
-  start http://boxstarter.org/package/nr/url?<URL-TO-RAW-GIST>
-  
-  OR
-  
-  Install-BoxstarterPackage -PackageName <URL-TO-RAW-GIST> -DisableReboots
-  Learn more: http://boxstarter.org/Learn/WebLauncher
+### System Utilities
+- PowerToys
+- ShareX
+- Wireshark
+- Docker for Windows
+
+### Media
+- MPC-BE (Media Player Classic Black Edition)
+
+---
+
+## 🧠 System Tweaks
+
+- Enables dark mode
+- Disables Cortana and Bing Search
+- Disables telemetry (basic level)
+- Removes Xbox/Game Bar apps (optional, tweakable)
+- Sets up your system for work, not ads
+
+---
+
+## ⚙️ Usage
+
+> ⚠️ Run as Administrator!
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force
+.\setup.ps1
