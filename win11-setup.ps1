@@ -25,8 +25,28 @@ if (Get-Command refreshenv -ErrorAction SilentlyContinue) {
 }
 
 # ----------------------
+# Dev Tools & Git Setup
+# ----------------------
+function Install-DevTools {
+    Write-Host "Installing developer tools..." -ForegroundColor Cyan
+
+    # Git with Unix tools on path, no shell integration (newer safer params format)
+    choco install git -y --params "'/GitAndUnixToolsOnPath /NoShellIntegration'"
+
+    # Skipping Windows Terminal since you use MS Store version
+    Write-Host "Windows Terminal is managed via Microsoft Store – skipping Chocolatey install." -ForegroundColor Yellow
+
+    # PowerShell Git prompt support
+    choco install poshgit -y
+
+    # Sysinternals tools
+    choco install sysinternals -y
+}
+
+# ----------------------
 # App Installs
 # ----------------------
+
 $packages = @(
     "googlechrome",
     "7zip",
@@ -52,6 +72,10 @@ foreach ($pkg in $packages) {
         Write-Warning "Failed to install $pkg. Error: $_"
     }
 }
+
+# Execute all setup functions
+Install-DevTools
+Install-Apps
 
 # ----------------------
 # System Tweaks
