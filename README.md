@@ -104,6 +104,6 @@ If you break something, blame Microsoft. If it works, buy me a coffee. ☕😎
 
 ---
 
-📦 **Script maintained by:** [Your Name Here]  
+📦 **Script maintained by:** [Bakahr]  
 🔗 [Boxstarter.org](https://boxstarter.org) | [Chocolatey.org](https://chocolatey.org)
 
