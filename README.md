@@ -92,8 +92,6 @@ Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/YOUR_U
 
 Want to fork this? Make your own dotfiles setup? Run this on all your machines with a GitHub repo + Boxstarter? Do it.
 
-Just don’t ask me “how to run a `.ps1` file” — unless you also still use Internet Explorer.
-
 ---
 
 ## 🏁 Final Words
