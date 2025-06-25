@@ -52,10 +52,58 @@ Welcome to my personal Windows 11 setup script — a fast, automated way to prov
 
 ### 📥 Step-by-Step
 
-1. **Install Chocolatey (if needed):**
-   Open PowerShell as Admin and run:
+```powershell
+# 1. Install Chocolatey (if needed)
+Set-ExecutionPolicy Bypass -Scope Process -Force
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
-   ```powershell
-   Set-ExecutionPolicy Bypass -Scope Process -Force
-   [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
-   Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+# 2. Install Boxstarter
+choco install boxstarter -y
+
+# 3. Run the setup script via Boxstarter
+
+# Option A – From local file
+Install-BoxstarterPackage -PackageName "C:\Path\To\setup.ps1"
+
+# Option B – From raw GitHub URL
+Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/setup.ps1"
+
+   ## 🧙 What This Does (and Doesn’t)
+
+✅ Automates 90% of my setup  
+✅ Skips Windows Terminal (I use the MS Store version)  
+✅ Reboot-safe thanks to Boxstarter  
+❌ Doesn’t teach you PowerShell  
+❌ Doesn’t hold your hand unless you’re worthy  
+
+---
+
+## 🗃️ Optional Add-ons (Not Included Yet)
+
+- Wallpaper setting  
+- Windows Terminal `settings.json` sync  
+- WSL2 installation and Ubuntu setup  
+- Dotfiles cloning  
+
+---
+
+## 🧑‍💻 For Nerds and Power Users
+
+Want to fork this? Make your own dotfiles setup? Run this on all your machines with a GitHub repo + Boxstarter? Do it.
+
+Just don’t ask me “how to run a `.ps1` file” — unless you also still use Internet Explorer.
+
+---
+
+## 🏁 Final Words
+
+This script exists so I can reinstall Windows with zero pain, zero bloat, and max efficiency.
+
+If you break something, blame Microsoft. If it works, buy me a coffee. ☕😎
+
+---
+
+📦 **Script maintained by:** [Your Name Here]  
+🔗 [Boxstarter.org](https://boxstarter.org) | [Chocolatey.org](https://chocolatey.org)
+
