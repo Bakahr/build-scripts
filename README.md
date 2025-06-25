@@ -1,55 +1,61 @@
-# 🚀 Modern Windows 11 Setup Script
+# 🖥️ Modern Windows 11 Setup Script (Chocolatey + Boxstarter)
 
-This is my personal Windows 11 setup script, built with ❤️, ☕ and Chocolatey.  
-It configures my dev environment, installs essential tools, applies system tweaks, and removes Microsoft bloat — all in one go.
-
-> Because "manual install" is a curse word in my house.
+Welcome to my personal Windows 11 setup script — a fast, automated way to provision a clean system with all my essential tools, tweaks, and terminal wizardry. No more manually downloading Chrome. No more next > next > finish. Just run the script and chill.
 
 ---
 
-## 🛠 What It Installs
+## 📦 What's Inside?
 
-### Dev Tools
-- Git (with Unix tools on path)
-- PoshGit
-- Sysinternals
+### ⚙️ Chocolatey + Boxstarter
+- Chocolatey: The Windows package manager
+- Boxstarter: Handles reboots, elevation, and long-running installs
 
-### Applications
-- Google Chrome
-- 7zip
-- VSCode
-- Spotify
-- Discord
-- Dropbox
-- GitHub Desktop
-- Steam
-- Obsidian
+### 🧰 Dev Tools
+- `git` (with Unix tools in PATH)
+- `poshgit` (pretty PowerShell git prompt)
+- `sysinternals` (because we do real work here)
 
-### System Utilities
-- PowerToys
-- ShareX
-- Wireshark
-- Docker for Windows
+### 🌐 Apps
+- `googlechrome`
+- `7zip`
+- `vscode`
+- `spotify`
+- `discord`
+- `steam`
+- `dropbox`
+- `github-desktop`
+- `sharex`
+- `docker-for-windows`
+- `wireshark`
+- `obsidian`
 
-### Media
-- MPC-BE (Media Player Classic Black Edition)
+### 🎬 Media
+- `mpc-be` (Media Player Classic Black Edition)
 
----
-
-## 🧠 System Tweaks
-
+### 🧠 System Tweaks
 - Enables dark mode
-- Disables Cortana and Bing Search
-- Disables telemetry (basic level)
-- Removes Xbox/Game Bar apps (optional, tweakable)
-- Sets up your system for work, not ads
+- Disables Bing Search, Cortana, and telemetry (basic level)
+- Removes Xbox-related bloatware
+- Prepares Windows for a real user, not a Microsoft ad farm
 
 ---
 
-## ⚙️ Usage
+## 🚀 How to Use
 
-> ⚠️ Run as Administrator!
+### 🔧 Prerequisites
+- Windows 11 (Pro recommended)
+- Administrator rights
+- PowerShell knowledge: Optional but appreciated
+- A desire to never manually install Spotify again
 
-```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force
-.\setup.ps1
+---
+
+### 📥 Step-by-Step
+
+1. **Install Chocolatey (if needed):**
+   Open PowerShell as Admin and run:
+
+   ```powershell
+   Set-ExecutionPolicy Bypass -Scope Process -Force
+   [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+   Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
