@@ -47,29 +47,30 @@ function Install-DevTools {
 # App Installs
 # ----------------------
 
-$packages = @(
-    "googlechrome",
-    "7zip",
-    "vscode",
-    "spotify",
-    "discord",
-    "steam",
-    "powertoys",
-    "dropbox",
-    "github-desktop",
-    "sysinternals",
-    "sharex",
-    "docker-for-windows",
-    "wireshark",
-    "obsidian"
-)
+function Install-Apps {
+    $packages = @(
+        "googlechrome",
+        "7zip",
+        "vscode",
+        "spotify",
+        "discord",
+        "steam",
+        "powertoys",
+        "dropbox",
+        "github-desktop",
+        "sharex",
+        "docker-for-windows",
+        "wireshark",
+        "obsidian"
+    )
 
-foreach ($pkg in $packages) {
-    Write-Host "Installing $pkg..." -ForegroundColor Cyan
-    try {
-        choco install $pkg -y --no-progress --limit-output
-    } catch {
-        Write-Warning "Failed to install $pkg. Error: $_"
+    foreach ($pkg in $packages) {
+        Write-Host "Installing $pkg..." -ForegroundColor Cyan
+        try {
+            choco install $pkg -y --no-progress --limit-output
+        } catch {
+            Write-Warning "Failed to install $pkg. Error: $_"
+        }
     }
 }
 
