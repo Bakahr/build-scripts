@@ -18,7 +18,11 @@ if (!(Get-Command choco -ErrorAction SilentlyContinue)) {
 }
 
 # Refresh environment
-refreshenv
+if (Get-Command refreshenv -ErrorAction SilentlyContinue) {
+    refreshenv
+} else {
+    Write-Host "Skipping refreshenv – not available in this shell."
+}
 
 # ----------------------
 # App Installs
@@ -29,19 +33,24 @@ $packages = @(
     "vscode",
     "spotify",
     "discord",
-    #"steam",
+    "steam",
     "powertoys",
     "dropbox",
     "github-desktop",
     "sysinternals",
     "sharex",
-    "docker-for-windows"
+    "docker-for-windows",
     "wireshark",
     "obsidian"
 )
 
 foreach ($pkg in $packages) {
-    choco install $pkg -y
+    Write-Host "Installing $pkg..." -ForegroundColor Cyan
+    try {
+        choco install $pkg -y --no-progress --limit-output
+    } catch {
+        Write-Warning "Failed to install $pkg. Error: $_"
+    }
 }
 
 # ----------------------
@@ -59,7 +68,7 @@ Set-ItemProperty -Path "HKCU:\Software\Policies\Microsoft\Windows\Explorer" -Nam
 New-Item -Path "HKLM:\Software\Policies\Microsoft\Windows\DataCollection" -Force
 Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\DataCollection" -Name "AllowTelemetry" -Value 1 -Type DWord
 
-# Remove Xbox Game Bar / all Xbox related Apps (not recommended, if you have a e.g 7950X3D, 9950X3D then keep it, since windows/amd uses it for scheduling of cores for gaming vs productivity)
+# Remove Xbox Game Bar / all Xbox related Apps (not recommended, if you have, e.g, 7950X3D, 9950X3D, then keep it, since Windows/AMD uses it for scheduling of cores for gaming vs productivity)
   Get-AppxPackage *Xbox* | Remove-AppxPackage
 
 # Disable Cortana (registry only)
