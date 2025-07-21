@@ -1,6 +1,6 @@
 # 🖥️ Modern Windows 11 Setup Script (Chocolatey + Boxstarter)
 
-Welcome to my personal Windows 11 setup script — a fast, automated way to provision a clean system with all my essential tools, tweaks, and terminal wizardry. No more manually downloading Chrome. No more next > next > finish. Just run the script and chill.
+Welcome to my personal Windows 11 setup script — a fast, automated way to provision a clean system with all my essential tools, tweaks, and terminal wizardry. No more manually downloading and setting up your applications/games.
 
 ---
 
