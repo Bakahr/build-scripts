@@ -98,7 +98,7 @@ Want to fork this? Make your own dotfiles setup? Run this on all your machines w
 
 This script exists so I can reinstall Windows with zero pain, zero bloat, and max efficiency.
 
-If you break something, blame Microsoft. If it works, buy me a coffee. ☕😎
+If you break something, blame yourself. If it works, buy me a coffee. ☕😎
 
 ---
 
