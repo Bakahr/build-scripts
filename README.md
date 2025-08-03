@@ -86,22 +86,6 @@ Install-BoxstarterPackage -PackageName "https://raw.githubusercontent.com/YOUR_U
 - WSL2 installation and Ubuntu setup  
 - Dotfiles cloning  
 
----
-
-## 🧑‍💻 For Nerds and Power Users
-
-Want to fork this? Make your own dotfiles setup? Run this on all your machines with a GitHub repo + Boxstarter? Do it.
-
----
-
-## 🏁 Final Words
-
-This script exists so I can reinstall Windows with zero pain, zero bloat, and max efficiency.
-
-If you break something, blame yourself. If it works, buy me a coffee. ☕😎
-
----
-
 📦 **Script maintained by:** [Bakahr]  
 🔗 [Boxstarter.org](https://boxstarter.org) | [Chocolatey.org](https://chocolatey.org)
 
